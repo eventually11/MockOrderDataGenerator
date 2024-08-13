@@ -13,16 +13,16 @@ Features
 
     bash
 
-pip install -r requirements.txt
+    pip install -r requirements.txt
 
 Run Scripts: Use the provided scripts to generate and process test data.
 
 bash
 
-python script_name.py
+    python script_name.py
 
 Testing: The repository includes unit tests to verify functionality. Run the tests with:
 
 bash
 
-python -m unittest discover
+    python -m unittest discover
