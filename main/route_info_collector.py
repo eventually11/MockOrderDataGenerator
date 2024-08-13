@@ -58,7 +58,9 @@ class RouteInfoCollector:
                     'latitude': dest_lat,
                     'longitude': dest_lng,
                     'distance_km': distance,
-                    'duration_min': duration
+                    'duration_min': duration,
+                    'type':row['type'],
+                    'address':row['address']
                 })
 
             # Convert the list of dictionaries to a new DataFrame
