@@ -13,7 +13,7 @@ Install Dependencies: Ensure all required Python packages are installed.
 
 bash
 
-    pip install -r requirements.txt
+    pip install requests pandas
 
 Run Scripts: Use the provided scripts to generate and process test data.
 
