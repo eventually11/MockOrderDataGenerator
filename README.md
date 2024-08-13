@@ -9,9 +9,9 @@ Features
 
 # Usage
 
-    Install Dependencies: Ensure all required Python packages are installed.
+Install Dependencies: Ensure all required Python packages are installed.
 
-    bash
+bash
 
     pip install -r requirements.txt
 
