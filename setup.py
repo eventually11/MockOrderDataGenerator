@@ -6,8 +6,7 @@ setup(
     description='A package for generating and processing test data with geographical and route calculations.',
     author='eventually',
     author_email='ferry792351742@gmail.com',
-    packages=find_packages(where="src"),
-    package_dir={"": "src"},
+    packages=find_packages(),  
     install_requires=[
         'requests',
         'pandas',
