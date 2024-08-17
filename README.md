@@ -17,6 +17,12 @@ bash
     cd MockOrderDataGenerator
     pip install .
 
+    
+# Outputs
+CSV and Json files:
+        df_orders = collector.collect_order_data(...)
+        df_orders.to_csv('output/orders.csv', index=False)
+        df_orders.to_json('output/orders.json', orient='records', lines=True)
 
 # Usage
 
@@ -35,6 +41,17 @@ bash
 
 Testing: The repository includes unit tests to verify functionality. Run the tests with:
 
+
+
 bash
 
     python -m unittest discover
+
+
+# Importing the Package
+
+    import MockOrderDataGenerator
+    import MockOrderDataGenerator.route_info_collector
+    
+    collector = MockOrderDataGenerator.route_info_collector.RouteInfoCollector()
+    routes = collector.collect_route_info(...)
