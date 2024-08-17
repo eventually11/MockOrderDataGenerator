@@ -7,6 +7,15 @@ Features
     OSRM Route Calculations: Compute driving distances and travel times between locations.
     Data Handling: Combine and process location data into Pandas DataFrames for further analysis.
 
+## Installation
+
+To get started, clone the repository, navigate to the project directory, and install the package:
+
+```bash
+    git clone https://github.com/eventually11/MockOrderDataGenerator.git
+    cd MockOrderDataGenerator
+    pip install .
+
 # Usage
 
 Install Dependencies: Ensure all required Python packages are installed.
@@ -16,6 +25,7 @@ bash
     pip install requests pandas
 
 Run Scripts: Use the provided scripts to generate and process test data.
+
 
 bash
 
