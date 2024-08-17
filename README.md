@@ -17,6 +17,11 @@ bash
     cd MockOrderDataGenerator
     pip install .
 
+
+    git clone https://github.com/eventually11/MockOrderDataStructured.git
+    cd MockOrderDataStructured
+    pip install .
+
     
 # Outputs
 CSV and Json files:
