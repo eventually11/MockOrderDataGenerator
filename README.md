@@ -11,7 +11,7 @@ Features
 
 To get started, clone the repository, navigate to the project directory, and install the package:
 
-```bash
+bash
     git clone https://github.com/eventually11/MockOrderDataGenerator.git
     cd MockOrderDataGenerator
     pip install .
