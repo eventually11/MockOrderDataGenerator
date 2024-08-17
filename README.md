@@ -17,6 +17,8 @@ bash
     cd MockOrderDataGenerator
     pip install .
 
+    cd ..
+
 
     git clone https://github.com/eventually11/MockOrderDataStructured.git
     cd MockOrderDataStructured
