@@ -6,15 +6,8 @@ Created on Mon Aug 12 22:43:48 2024
 """
 import os
 import sys
-current_file_path = os.path.abspath(sys.argv[0])
-parent_directory = os.path.abspath(os.path.join(os.path.dirname(current_file_path), '../../MockOrderDataImporter/main'))
-parent_directory2 = os.path.abspath(os.path.join(os.path.dirname(current_file_path), '../../MockOrderDataGenerator/main'))
-parent_directory3 = os.path.abspath(os.path.join(os.path.dirname(current_file_path), '../../MockOrderDataStructured/main'))
-sys.path.insert(0, parent_directory)
-sys.path.insert(0, parent_directory2)
-sys.path.insert(0, parent_directory3)
 
-from saas_partner_order_structure import SaasPartnerOrderDataStructure  
+from MockOrderDataStructured.saas_partner_order_structure import SaasPartnerOrderDataStructure  
 
 from hypothesis import given
 import pandas as pd
@@ -106,7 +99,7 @@ if __name__ == "__main__":
     df_orders = generator.generate_orders(10)
 
     # Save the orders to a JSON file
-    generator.save_to_json(df_orders, "mock_partner_order.json")
+    generator.save_to_json(df_orders, "../../output/mock_partner_order.json")
 
     # Save the orders to a CSV file
-    generator.save_to_csv(df_orders, "mock_partner_order.csv")
+    generator.save_to_csv(df_orders, "../../output/mock_partner_order.csv")

@@ -6,15 +6,8 @@ Created on Mon Aug 12 22:43:48 2024
 """
 import os
 import sys
-current_file_path = os.path.abspath(sys.argv[0])
-parent_directory = os.path.abspath(os.path.join(os.path.dirname(current_file_path), '../../MockOrderDataImporter/main'))
-parent_directory2 = os.path.abspath(os.path.join(os.path.dirname(current_file_path), '../MockOrderDataGenerator/main'))
-parent_directory3 = os.path.abspath(os.path.join(os.path.dirname(current_file_path), '../MockOrderDataStructured/main'))
-sys.path.insert(0, parent_directory)
-sys.path.insert(0, parent_directory2)
-sys.path.insert(0, parent_directory3)
 
-from saas_partner_order_structure import SaasPartnerOrderDataStructure  
+from MockOrderDataStructured.saas_task_data_structure import SaasTaskDataStructure
 
 from hypothesis import given
 import pandas as pd
@@ -23,7 +16,7 @@ import pandas as pd
 class MockDFGenerator:
     def __init__(self):
         # Create an instance of SaasPartnerOrderDataStructure
-        self.order_data_structure = SaasPartnerOrderDataStructure()
+        self.order_data_structure = SaasTaskDataStructure()
         # Extract the address pool from the instance
         self.address_pool = self.order_data_structure.address_pool
     def collect_order_data(self, order_data):
@@ -58,7 +51,7 @@ class MockDFGenerator:
         """
         orders = []
 
-        @given(self.order_data_structure.generate_order_data(self.address_pool))
+        @given(self.order_data_structure.saas_task_data(self.address_pool))
         def collect_order(order):
             orders.append(order)
 
@@ -106,7 +99,7 @@ if __name__ == "__main__":
     df_orders = generator.generate_orders(10)
 
     # Save the orders to a JSON file
-    generator.save_to_json(df_orders, "orders.json")
+    generator.save_to_json(df_orders, "../../output/mock_saas_task_data.json")
 
     # Save the orders to a CSV file
-    generator.save_to_csv(df_orders, "orders.csv")
+    generator.save_to_csv(df_orders, "../../output/mock_saas_task_data.csv")

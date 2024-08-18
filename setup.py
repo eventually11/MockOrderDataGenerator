@@ -7,7 +7,8 @@ setup(
     author='eventually',
     author_email='ferry792351742@gmail.com',
      url='https://github.com/eventually11/MockOrderDataGenerator',
-    packages=find_packages(),  
+    packages=find_packages(where="src"),
+    package_dir={"": "src"},  
     install_requires=[
         'requests',
         'pandas',
