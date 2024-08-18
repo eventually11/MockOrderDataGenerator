@@ -62,3 +62,15 @@ bash
     
     collector = MockOrderDataGenerator.route_info_collector.RouteInfoCollector()
     routes = collector.collect_route_info(...)
+
+
+# Run
+To run the run_saas_partner_order_generator.py script, which uses the configuration file and generates test data, use the following command:
+    python run_saas_partner_order_generator.py
+
+# Configuration
+The script uses a config.yaml file to control the data generation process. Here is an example configuration file:
+    config.yaml
+    
+    Number of orders to generate （hundred）
+    num_orders: 10
