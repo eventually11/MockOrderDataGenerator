@@ -21,14 +21,10 @@ Instructions:
 import os
 import sys
 
-# Get the full path to the current file and move up one directory to import from parent
-current_file_path = os.path.abspath(sys.argv[0])
-parent_directory = os.path.abspath(os.path.join(os.path.dirname(current_file_path), '../main'))
-sys.path.insert(0, parent_directory)
 
 import unittest
 from unittest.mock import patch, MagicMock
-from osrm_route_calculator import OSRMRouteCalculator
+from MockOrderDataGenerator.osrm_route_calculator import OSRMRouteCalculator
 
 class TestOSRMRouteCalculator(unittest.TestCase):
 

@@ -10,15 +10,8 @@ This unit test suite verifies the functionality of the MockDFGenerator class.
 """
 import os
 import sys
-current_file_path = os.path.abspath(sys.argv[0])
-parent_directory = os.path.abspath(os.path.join(os.path.dirname(current_file_path), '../../MockOrderDataImporter/main'))
-parent_directory2 = os.path.abspath(os.path.join(os.path.dirname(current_file_path), '../MockOrderDataGenerator/main'))
-parent_directory3 = os.path.abspath(os.path.join(os.path.dirname(current_file_path), '../MockOrderDataStructured/main'))
-sys.path.insert(0, parent_directory)
-sys.path.insert(0, parent_directory2)
-sys.path.insert(0, parent_directory3)
 import unittest
-from mock_df_generator import MockDFGenerator  
+from MockOrderDataGenerator.mock_df_generator import MockDFGenerator  
 
 
 class TestMockDFGenerator(unittest.TestCase):

@@ -23,12 +23,9 @@ Usage:
 
 import os
 import sys
-current_file_path = os.path.abspath(sys.argv[0])
-parent_directory = os.path.abspath(os.path.join(os.path.dirname(current_file_path), '../main'))
-sys.path.insert(0, parent_directory)
 import unittest
 import pandas as pd
-from route_info_collector import RouteInfoCollector  # Replace 'your_module' with the actual module name
+from MockOrderDataGenerator.route_info_collector import RouteInfoCollector  # Replace 'your_module' with the actual module name
 
 class TestRouteInfoCollector(unittest.TestCase):
     
