@@ -3,21 +3,15 @@
 Created on Thu Aug 15 10:35:38 2024
 
 @author: Administrator
+The test ensures that the main functionalities of the MockDFGenerator are working as expected in terms of file output.
 """
 
 import unittest
 import os
 import sys
-current_file_path = os.path.abspath(sys.argv[0])
-parent_directory = os.path.abspath(os.path.join(os.path.dirname(current_file_path), '../../MockOrderDataImporter/main'))
-parent_directory2 = os.path.abspath(os.path.join(os.path.dirname(current_file_path), '../../MockOrderDataGenerator/main'))
-parent_directory3 = os.path.abspath(os.path.join(os.path.dirname(current_file_path), '../../MockOrderDataStructured/main'))
-sys.path.insert(0, parent_directory)
-sys.path.insert(0, parent_directory2)
-sys.path.insert(0, parent_directory3)
 import pandas as pd
-from saas_partner_order_structure import SaasPartnerOrderDataStructure
-from mock_df_generator import MockDFGenerator  # Assuming you saved your class as mock_df_generator.py
+from MockOrderDataGenerator.saas_partner_order_generator import MockDFGenerator  # Assuming you saved your class as mock_df_generator.py
+
 
 class TestMockDFGenerator(unittest.TestCase):
 
@@ -28,9 +22,14 @@ class TestMockDFGenerator(unittest.TestCase):
         # Generate orders
         self.df_orders = self.generator.generate_orders(10)
 
+        # Define the output directory and ensure it exists
+        self.output_dir =  "../output"
+        if not os.path.exists(self.output_dir):
+            os.makedirs(self.output_dir)
+
         # File names for the output
-        self.json_file = "test_mock_partner_order.json"
-        self.csv_file = "test_mock_partner_order.csv"
+        self.json_file = os.path.join(self.output_dir, "test_mock_partner_order.json")
+        self.csv_file = os.path.join(self.output_dir, "test_mock_partner_order.csv")
 
     def test_save_to_json(self):
         # Save the orders to a JSON file
@@ -55,3 +54,4 @@ class TestMockDFGenerator(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
