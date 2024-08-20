@@ -20,7 +20,7 @@ class TestMockDFGenerator(unittest.TestCase):
         # Generate orders
         self.df_orders = self.generator.generate_orders(10)
         # Define the output directory and ensure it exists
-        self.output_dir =  "../../output"
+        self.output_dir =  "../output"
         if not os.path.exists(self.output_dir):
             os.makedirs(self.output_dir)
 
